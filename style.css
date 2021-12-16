@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+body {
+    font-family: 'Red Hat Text', sans-serif;
+    background: #201C2A url("../img/bg-stars.svg");
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 70vh;
+    width: 85%;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 4%;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.happyYear {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 30%;
+}
+
+.happyYear h1{
+    font-size: 10em;
+    font-weight: 900;
+    width: 100%;
+}
+
+#timer {
+    position: relative;
+    display: flex;
+}
+
+#timer .front, #timer .back {
+    width: 100%;
+    border-radius: 8px;
+    text-align: center;
+    background: linear-gradient(to bottom, #2C2C44 0%, #2C2C44 50%, #34364F 51%, #34364F 100%);
+}
+
+#timer .back {
+    position: absolute;
+    top: 0;
+}
+
+
+.areaClock {
+    background-color: #1A1823;
+    margin: 20px 2%;
+    width: 10em;
+    height: 300%;
+    border-radius: 8px;
+    position: relative;
+    z-index: 0;
+}
+
+.areaClock#days {
+    width: 14em;
+}
+
+.numberClock {
+    font-size: 5em;
+    font-weight: 900;
+    padding: 0.1em;
+    z-index: 2;
+    width: 100%;
+    text-align: center;
+    transform-style: preserve-3d; 
+    background: linear-gradient(to bottom, #F95F83 0%, #F95F83 50%, #f888a2 51%, #f888a2 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.box-container {
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+}
+
+.box {
+    border-radius: 8px;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%; 
+    transform-style: preserve-3d; 
+}
+
+.border {
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid #1a182338;
+    position: absolute;
+    top: 50%;
+}
+
+.circleRight {
+    width: 10px;
+    height: 10px;
+    background-color: #1A1823;
+    position: absolute;
+    top: 42%;
+    left: -5px;
+    border-radius: 50%;
+    z-index: 8;
+}
+
+.circleLeft {
+    width: 10px;
+    height: 10px;
+    background-color: #1A1823;
+    position: absolute;
+    top: 42%;
+    right: -5px;
+    border-radius: 50%;
+    z-index: 8;
+    
+}
+
+.textTime p {
+    font-size: 17px;
+    font-weight:500;
+    position: absolute;
+    top: 120%;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #838498;
+}
+
+.front, .back, .numberClock {
+    backface-visibility: hidden;
+}
+
+.footer {
+    background: #201C2A url("../img/pattern-hills.svg") no-repeat;
+    background-size: cover;
+    height: 30vh;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.fab {
+    margin: 14px;
+    font-size: 35px;
+    color: #8A8DAE;
+    margin-top: 130px;
+}
+
+.fab:hover {
+    color: #F95F83;
+}
+
+.rotate{
+    transition: transform 1s;
+    transform: rotateX(-360deg);
+    transform-origin: center;
+}
+
+.mod {
+    position: absolute;
+    top: 0;
+    z-index: 3;
+}
+
+.hidden {
+    display: none;
+}
+
+@media screen and (max-width: 700px) {
+    .title {
+        font-size: 1.5em
+    }
+
+    #timer {
+        width: 100%;
+    }
+
+    .numberClock {
+        font-size: 3em;
+    }
+
+    .areaClock {
+        height: 4.2em;
+    }
+
+    .textTime p {
+        font-size: .7em;
+    }
+
+    .footer {
+        background-position: right center;
+    }
+}
+
+@media screen and (max-width: 482px) {
+    .title {
+        font-size: 1.2em
+    }
+
+    .numberClock {
+        font-size: 2.8em;
+    }
+
+    .textTime p {
+        font-size: .5em;
+    }
+
+    .areaClock {
+        height: 3.6em;
+    }
+}
+
+@media screen and (max-width: 406px) {
+    #timer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box-container, .areaClock, .areaClock#days {
+        width: 150px;
+    }
+}
+
